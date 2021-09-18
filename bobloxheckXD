@@ -1,0 +1,147 @@
+-- was made by B1M#0001
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local INF = Instance.new("TextButton")
+local dark = Instance.new("TextButton")
+local inf = Instance.new("TextButton")
+local OWL = Instance.new("TextButton")
+local X = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+Frame.Position = UDim2.new(0.417290121, 0, 0.263871759, 0)
+Frame.Size = UDim2.new(0, 241, 0, 278)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+TextLabel.Size = UDim2.new(0, 241, 0, 31)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "B1M P1CK"
+TextLabel.TextColor3 = Color3.fromRGB(93, 93, 93)
+TextLabel.TextSize = 14.000
+
+INF.Name = "INF"
+INF.Parent = Frame
+INF.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+INF.Position = UDim2.new(0, 0, 0.226618707, 0)
+INF.Size = UDim2.new(0, 161, 0, 30)
+INF.Font = Enum.Font.SourceSans
+INF.Text = "INF yeild"
+INF.TextColor3 = Color3.fromRGB(75, 75, 75)
+INF.TextSize = 14.000
+INF.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+
+dark.Name = "dark"
+dark.Parent = Frame
+dark.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+dark.Position = UDim2.new(0.331950217, 0, 0.446043164, 0)
+dark.Size = UDim2.new(0, 161, 0, 30)
+dark.Font = Enum.Font.SourceSans
+dark.Text = "dark hub"
+dark.TextColor3 = Color3.fromRGB(75, 75, 75)
+dark.TextSize = 14.000
+dark.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init", true))()
+end)
+
+
+inf.Name = "inf"
+inf.Parent = Frame
+inf.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+inf.Position = UDim2.new(0, 0, 0.633093536, 0)
+inf.Size = UDim2.new(0, 174, 0, 30)
+inf.Font = Enum.Font.SourceSans
+inf.Text = "Destruction Simulator inf coines"
+inf.TextColor3 = Color3.fromRGB(75, 75, 75)
+inf.TextSize = 14.000
+inf.MouseButton1Down:connect(function()
+	game:GetService("ReplicatedStorage").Remotes.generateBoost:FireServer("Coins", 480, 99999999)
+end)
+
+OWL.Name = "OWL"
+OWL.Parent = Frame
+OWL.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+OWL.Position = UDim2.new(0.331950217, 0, 0.809352517, 0)
+OWL.Size = UDim2.new(0, 161, 0, 30)
+OWL.Font = Enum.Font.SourceSans
+OWL.Text = "OWL HUB"
+OWL.TextColor3 = Color3.fromRGB(75, 75, 75)
+OWL.TextSize = 14.000
+OWL.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ZinityDrops/OwlHubLink/master/OwlHubBack.lua"))();
+end)
+
+X.Name = "X"
+X.Parent = Frame
+X.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+X.Position = UDim2.new(0.896265566, 0, 0, 0)
+X.Size = UDim2.new(0, 25, 0, 31)
+X.Font = Enum.Font.SourceSans
+X.Text = "X"
+X.TextColor3 = Color3.fromRGB(75, 75, 75)
+X.TextSize = 14.000
+
+-- Scripts:
+
+local function PZTVV_fake_script() -- X.CloseGuiButtonScript 
+	local script = Instance.new('Script', X)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+end
+coroutine.wrap(PZTVV_fake_script)()
+local function ELWQY_fake_script() -- Frame.Drag 
+	local script = Instance.new('LocalScript', Frame)
+
+	
+	local UIS = game:GetService("UserInputService")
+	function dragify(Frame)
+	    dragToggle = nil
+	    local dragSpeed = 0
+	    dragInput = nil
+	    dragStart = nil
+	    local dragPos = nil
+	    function updateInput(input)
+	        local Delta = input.Position - dragStart
+	        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+	        game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.25), {Position = Position}):Play()
+	    end
+	    Frame.InputBegan:Connect(function(input)
+	        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
+	            dragToggle = true
+	            dragStart = input.Position
+	            startPos = Frame.Position
+	            input.Changed:Connect(function()
+	                if input.UserInputState == Enum.UserInputState.End then
+	                    dragToggle = false
+	                end
+	            end)
+	        end
+	    end)
+	    Frame.InputChanged:Connect(function(input)
+	        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+	            dragInput = input
+	        end
+	    end)
+	    game:GetService("UserInputService").InputChanged:Connect(function(input)
+	        if input == dragInput and dragToggle then
+	            updateInput(input)
+	        end
+	    end)
+	end
+	dragify(script.Parent)
+end
+coroutine.wrap(ELWQY_fake_script)()
